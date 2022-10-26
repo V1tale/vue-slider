@@ -3,9 +3,9 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
-        
-        currentIndex: 0,
-        
+            
+            currentIndex: 0,
+            
         slides: [
             {
         image: 'img/01.jpg',
@@ -32,8 +32,24 @@ createApp({
         title: 'Paradise',
         text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
     }
-]
+    ]
 
-}
-}
+    }
+    },
+    methods: {
+        forward: function() {
+            if (this.currentIndex < this.slides.length -1) {
+                
+                this.currentIndex++
+            } else {this.currentIndex = 0
+            }
+        },
+        backward: function() {
+            if (this.currentIndex > 0 ) {
+                this.currentIndex--
+            } else {this.currentIndex = this.slides.length -1
+            };
+        }
+    }
 }).mount("#app");
+
