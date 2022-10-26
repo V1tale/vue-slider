@@ -38,8 +38,7 @@ createApp({
     },
     methods: {
         forward: function() {
-            if (this.currentIndex < this.slides.length -1) {
-                
+            if (this.currentIndex < this.slides.length -1) {            
                 this.currentIndex++
             } else {this.currentIndex = 0
             }
@@ -49,7 +48,11 @@ createApp({
                 this.currentIndex--
             } else {this.currentIndex = this.slides.length -1
             };
-        }
+        },
+        selected(clicked) {
+            this.currentIndex = clicked;
+        },
+       
     }
 }).mount("#app");
 
